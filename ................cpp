@@ -48,9 +48,7 @@ using namespace std;
 		int i=0,h=0;
 		Book bookarray[50];
 		int enter=0;
-		char temp;
-		int length = sizeof(titlemain);
-		char* char_array = new char[length];
+		string temp;
 		
 		do{
 			cout<<"--------------------------------------------------------------------------------------------------\n	Menu: ";
@@ -98,21 +96,15 @@ using namespace std;
 						getline(cin,titlemain);
 						
 						
-					    strcpy(char_array, titlemain.c_str()); 
+					    for (int j = 0; j < titlemain.length(); ++j){
+        					titlemain[j] = toupper(titlemain[j]);
+    					}
 						
-						for (int j=0; j<length;j++){
-							temp = toupper(char_array[j]);
-							cout << temp;
-						}
-						
-						
+						temp=titlemain;
 						
 						for(h=0;h<i;h++){
-							strcpy(char_array, titlemain.c_str());
-							for (int j=0; j<length;j++){
-							temp = toupper(char_array[j]);
-						}
-							if(bookarray[h].getTitle().compare(titlemain)==0){
+						
+							if(bookarray[h].getTitle().compare(titlemain)==1&&bookarray[h].getTitle().compare(temp)==1){
 								cout<<"\n	Title				Author				Year";
 								cout<<"\n	"<<bookarray[h].getTitle(); 
 								cout<<"				"<<bookarray[h].getAuthor(); 
@@ -126,15 +118,18 @@ using namespace std;
 						pass=1;
 						system("cls");
 					break;
+					
 					case 4:
 						cout<<"\n	4. Exit";
 						pass=0;
 						system("cls");
 					break;
+					
 					default:
 						cout<<"Invalud Input, Choose Again";
 						pass=1;
-			}  
-		}while(pass==1);
+				}
+	
+			}while(pass==1);
 		return 0;
-	}
+		}
