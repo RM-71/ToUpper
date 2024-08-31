@@ -96,40 +96,38 @@ using namespace std;
 						getline(cin,titlemain);
 						
 						
-					    for (int j = 0; j < titlemain.length(); ++j){
-        					titlemain[j] = toupper(titlemain[j]);
-    					}
-						
-						temp=titlemain;
-						
+					    
+        					
 						for(h=0;h<i;h++){
-						
-							if(bookarray[h].getTitle().compare(titlemain)==1&&bookarray[h].getTitle().compare(temp)==1){
+							temp=bookarray[h].getTitle();
+        					for (int j = 0; j < titlemain.length(); ++j){
+        						titlemain[j]=toupper(titlemain[j]);
+    						}
+    						for (int o = 0; o < temp.size(); ++o){
+    							temp[o]=toupper(temp[o]);
+							}
+							if(titlemain.compare(temp)==0){
 								cout<<"\n	Title				Author				Year";
 								cout<<"\n	"<<bookarray[h].getTitle(); 
 								cout<<"				"<<bookarray[h].getAuthor(); 
 								cout<<"				"<<bookarray[h].getYear(); 
 							}
 							else
-							cout<<"		Could not find the book you were looking for";
+								cout<<"		Could not find the book you were looking for";
 						}
-						cout<<"\n\n	Press Enter to Continue";	
 						getch();
 						pass=1;
 						system("cls");
 					break;
-					
 					case 4:
 						cout<<"\n	4. Exit";
 						pass=0;
 						system("cls");
 					break;
-					
 					default:
 						cout<<"Invalud Input, Choose Again";
 						pass=1;
 				}
-	
 			}while(pass==1);
 		return 0;
 		}
