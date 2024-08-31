@@ -104,7 +104,7 @@ using namespace std;
 						
 						for(h=0;h<i;h++){
 						
-							if(bookarray[h].getTitle().compare(titlemain)==1&&bookarray[h].getTitle().compare(temp)==1){
+							if(bookarray[h].getTitle().compare(titlemain)==0||bookarray[h].getTitle().compare(temp)==0){
 								cout<<"\n	Title				Author				Year";
 								cout<<"\n	"<<bookarray[h].getTitle(); 
 								cout<<"				"<<bookarray[h].getAuthor(); 
