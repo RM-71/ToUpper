@@ -102,7 +102,7 @@ using namespace std;
     						}
     						for (int o = 0; o < temp.size(); ++o){
     							temp[o]=toupper(temp[o]);
-							}
+						}
 							if(titlemain.compare(temp)==0){
 								cout<<"\n	Title				Author				Year";
 								cout<<"\n	"<<bookarray[h].getTitle(); 
