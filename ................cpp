@@ -99,6 +99,7 @@ using namespace std;
 					    
         					
 						for(h=0;h<i;h++){
+<<<<<<< HEAD
 							temp=bookarray[h].getTitle();
         					for (int j = 0; j < titlemain.length(); ++j){
         						titlemain[j]=toupper(titlemain[j]);
@@ -107,6 +108,10 @@ using namespace std;
     							temp[o]=toupper(temp[o]);
 							}
 							if(titlemain.compare(temp)==0){
+=======
+						
+							if(bookarray[h].getTitle().compare(titlemain)==0||bookarray[h].getTitle().compare(temp)==0){
+>>>>>>> bf2828c48678efeb79cd89974ae7b400985c222f
 								cout<<"\n	Title				Author				Year";
 								cout<<"\n	"<<bookarray[h].getTitle(); 
 								cout<<"				"<<bookarray[h].getAuthor(); 
